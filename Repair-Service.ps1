@@ -63,3 +63,4 @@ IF ($testSvc.status -eq "Stopped")
 					}
 		write-output "STARTED"
 	}
+	
