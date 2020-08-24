@@ -22,7 +22,7 @@ try {
 		}
 			#Output NOEXIST and exit if the service passed to us doesn't exist
 			catch{
-				"NOEXIST"
+				write-output NOEXIST
 				exit
 				}
 
@@ -39,10 +39,10 @@ IF ($testSvc.status -eq "Running")
 				}
 				catch
 					{
-						"RESTARTFAIL"
+						write-output RESTARTFAIL
 						exit
 					}
-		write-output "RESTARTED"
+		write-output RESTARTED
 		exit
 	}
 
@@ -59,10 +59,10 @@ IF ($testSvc.status -eq "Stopped")
 			
 				catch
 					{
-						"CANTSTART"
+						write-output CANTSTART
 						exit
 					}
-		write-output "STARTED"
+		write-output STARTED
 		exit
 	}
 #If its not running or stopped then its starting or stopping and we don't want to mess with it
