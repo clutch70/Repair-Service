@@ -43,6 +43,7 @@ IF ($testSvc.status -eq "Running")
 						exit
 					}
 		write-output "RESTARTED"
+		exit
 	}
 
 IF ($testSvc.status -eq "Stopped")
@@ -62,6 +63,7 @@ IF ($testSvc.status -eq "Stopped")
 						exit
 					}
 		write-output "STARTED"
+		exit
 	}
 #If its not running or stopped then its starting or stopping and we don't want to mess with it
 write-output "SVCBUSY"
