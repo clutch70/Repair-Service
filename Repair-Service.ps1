@@ -31,11 +31,11 @@ IF ($testSvc.status -eq "Running")
 	{
 		try
 			{
-				$svcRestart = Restart-Service -name $targetService -ErrorAction Stop
+				$svcRestart = Restart-Service -name $targetService -ErrorAction Stop -WarningAction SilentlyContinue
 			}
 			catch [System.IO.IOException]
 				{
-					$svcRestart = Restart-Service -DisplayName $targetService -ErrorAction Stop
+					$svcRestart = Restart-Service -DisplayName $targetService -ErrorAction Stop -WarningAction SilentlyContinue
 				}
 				catch
 					{
@@ -50,11 +50,11 @@ IF ($testSvc.status -eq "Stopped")
 	{
 		try
 			{
-				$svcRestart = Start-Service -name $targetService -ErrorAction Stop
+				$svcRestart = Start-Service -name $targetService -ErrorAction Stop -WarningAction SilentlyContinue
 			}
 			catch [System.IO.IOException]
 				{
-					$svcRestart = Start-Service -DisplayName $targetService -ErrorAction Stop
+					$svcRestart = Start-Service -DisplayName $targetService -ErrorAction Stop -WarningAction SilentlyContinue
 				}
 			
 				catch
